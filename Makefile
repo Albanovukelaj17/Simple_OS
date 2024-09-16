@@ -15,7 +15,7 @@ kernel.o: src/kernel.c
 	$(CC) $(CFLAGS) -c src/kernel.c -o kernel.o
 
 kernel.bin: kernel.o
-	$(CC) $(CFLAGS) -T src/linker.ld -o kernel.bin boot.o kernel.o  # Verwende den Compiler als Linker
+	$(CC) $(CFLAGS) -T src/linker.ld -o kernel.bin kernel.o  
 
 os-image.bin: boot.o kernel.bin
 	cat boot.o kernel.bin > os-image.bin
