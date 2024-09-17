@@ -1,6 +1,5 @@
-// kernel.c - Einfacher Kernel
 void kernel_main() {
-    const char *message = "Welcome,Ayanokoji";
+    const char *message = "Kernel Start";
     char *video_memory = (char *) 0xb8000;  // VGA-Textspeicher bei 0xb8000
     int i = 0;
 
@@ -10,6 +9,6 @@ void kernel_main() {
         i++;
     }
 
-    while (1);  // Endlosschleife, damit der Kernel nicht endet
+    while (1);  // Endlosschleife
 }
 

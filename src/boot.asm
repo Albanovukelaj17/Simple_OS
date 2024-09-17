@@ -22,7 +22,7 @@ start:
     ; Kernel von der Festplatte lesen (vom 2. Sektor)
     mov ax, 0x0000       ; Segment:Offset, wo der Kernel geladen wird
     mov es, ax           ; ES = 0x0000
-    mov bx, 0x0800       ; Lade den Kernel ab Adresse 0x0800
+    mov bx, 0x0100       ; Lade den Kernel ab Adresse 0x0100
 
     mov ah, 0x02         ; BIOS-Funktion zum Lesen von Sektoren
     mov al, 1            ; 1 Sektor lesen
@@ -40,7 +40,7 @@ start:
     int 0x10
 
     ; Zum geladenen Kernel springen
-    jmp 0x0000:0x0800    ; Springe zu Adresse 0x0000:0x0800, wo der Kernel liegt
+    jmp 0x0000:0x0100    ; Springe zu Adresse 0x0000:0x0100, wo der Kernel liegt
 
 disk_error:
     ; Fehlerbehandlung, falls der Diskettenzugriff fehlschlägt
